@@ -1,5 +1,7 @@
 <?php
 
+namespace AnotherDay\Database;
+
 use AnotherDay\Database\Database;
 use AnotherDay\Database\DatabaseConfig;
 
