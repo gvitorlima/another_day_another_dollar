@@ -5,4 +5,4 @@ use AnotherDay\Database\DatabaseManager;
 require_once __DIR__ . '/../database/database.php';
 
 $dataConnection = database();
-$database = DatabaseManager::createConnection($dataConnection);
+DatabaseManager::createConnection($dataConnection);
