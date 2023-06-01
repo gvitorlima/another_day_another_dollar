@@ -1,13 +1,12 @@
 <?php
 
+use AnotherDay\Database\DatabaseManager;
 use AnotherDay\Http\Request;
 use AnotherDay\Http\Response;
 use AnotherDay\Http\Router;
 
-Router::get('/print', [
+Router::get('/', [
   function (Request $request, Response $response) {
-    return [
-      'response' => 'Oi'
-    ];
+    return DatabaseManager::executeQuery('SELECT * FROM LOGIN');
   }
 ]);
