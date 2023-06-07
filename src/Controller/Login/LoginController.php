@@ -22,12 +22,21 @@ class LoginController
 
   public function create(Request $request, Response $response)
   {
-    $postVars = $request->getPostVars();
+    $postVars = (object)$request->getPostVars();
+
+    $user = $postVars->user ?? [];
+    $account = $postVars->data_account ?? [];
 
     try {
+      $newUser = $this->service->create($user, $account);
 
-      
+      return $response
+        ->setResponse(200, $newUser);
     } catch (Exception $err) {
+      echo '<pre>';
+      print_r($err->getMessage());
+      echo '</pre>';
+      exit;
     }
   }
 }
